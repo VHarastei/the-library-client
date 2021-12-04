@@ -9,17 +9,17 @@ export const Header = () => {
         <h2 className="text-3xl font-bold">The LIBRARY</h2>
         <div className="flex items-center">
           <Link to="/books?sortBy=popularity">
-            <button className="opacity-80 text-lg font-semibold hover:opacity-100 mx-2">
+            <button className="opacity-80 text-lg font-medium hover:opacity-100 mx-2">
               Most Popular
             </button>
           </Link>
           <Link to="/books?sortBy=rating">
-            <button className="opacity-80 text-lg font-semibold hover:opacity-100 mx-2">
+            <button className="opacity-80 text-lg font-medium hover:opacity-100 mx-2">
               Top Rated
             </button>
           </Link>
           <Link to="/books?sortBy=latest">
-            <button className="opacity-80 text-lg font-semibold hover:opacity-100 mx-2">
+            <button className="opacity-80 text-lg font-medium hover:opacity-100 mx-2">
               Latest
             </button>
           </Link>

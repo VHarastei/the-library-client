@@ -7,8 +7,8 @@ module.exports = {
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
-        lightBlue: {
-          DEFAULT: '#61DAFB',
+        amazon: {
+          DEFAULT: '#FF9900',
         },
       },
       fontSize: {

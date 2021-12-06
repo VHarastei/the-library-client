@@ -6,9 +6,11 @@ export const Header = () => {
   return (
     <header className="fixed w-full z-10 top-0 py-4 bg-blue-500 shadow-sm text-white px-4">
       <nav className="max-w-7xl mx-auto flex justify-between">
-        <h2 className="text-3xl font-bold">The LIBRARY</h2>
+        <Link to="/">
+          <h2 className="text-3xl font-bold">The LIBRARY</h2>
+        </Link>
         <div className="flex items-center">
-          <Link to="/books?sortBy=popularity">
+          <Link to="/books?sortBy=views">
             <button className="opacity-80 text-lg font-medium hover:opacity-100 mx-2">
               Most Popular
             </button>
@@ -18,7 +20,7 @@ export const Header = () => {
               Top Rated
             </button>
           </Link>
-          <Link to="/books?sortBy=latest">
+          <Link to="/books?sortBy=date">
             <button className="opacity-80 text-lg font-medium hover:opacity-100 mx-2">
               Latest
             </button>

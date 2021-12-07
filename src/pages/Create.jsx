@@ -1,20 +1,27 @@
+import { nanoid } from 'nanoid';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router';
+import { addBookAC } from 'store/reducer';
 
-export const Create = () => {
+export const Create = ({ dispatch }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const navigate = useNavigate();
 
   const onSubmit = (data) => {
     const book = data;
+    book.id = nanoid();
     book.rating = +data.rating;
     book.date = +data.date;
     book.views = 0;
     book.img = null;
-    console.log(book);
+
+    navigate('/');
+    dispatch(addBookAC(book));
   };
 
   return (

@@ -1,16 +1,16 @@
-import { books } from 'components/Search';
 import React from 'react';
 import { useParams } from 'react-router';
 import starIcon from 'assets/star.svg';
 import amazonIcon from 'assets/amazon.png';
+import coverIcon from 'assets/cover.png';
 
-export const Book = () => {
+export const Book = ({ state }) => {
   const { bookId } = useParams();
-  console.log(bookId);
-  const book = books[2];
+  const book = state.books.find((book) => book.id === bookId);
+
   return (
     <div className="my-8 flex gap-4 justify-center items-center">
-      <img width={300} src={book.img} alt="" />
+      <img width={300} src={book.img || coverIcon} alt="" />
       <div className="bg-white rounded-lg p-4 flex flex-col justify-center h-full">
         <h2 className="text-4xl text-blue-500 font-semibold mb-4">{book.name}</h2>
         <div>

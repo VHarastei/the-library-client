@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Search } from './Search';
 
-export const Header = () => {
+export const Header = ({ books }) => {
   return (
     <header className="fixed w-full z-10 top-0 py-4 bg-blue-500 shadow-sm text-white px-4">
       <nav className="max-w-7xl mx-auto flex justify-between">
@@ -26,7 +26,7 @@ export const Header = () => {
             </button>
           </Link>
         </div>
-        <Search />
+        <Search books={books} />
       </nav>
     </header>
   );

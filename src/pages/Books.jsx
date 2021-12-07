@@ -1,12 +1,12 @@
 import React from 'react';
 import qs from 'query-string';
 import { useLocation } from 'react-router';
-import { books } from 'components/Search';
 import { BookCard } from 'components/BookCard';
 
-export const Books = () => {
+export const Books = ({ state }) => {
   const location = useLocation();
   const { sortBy } = qs.parse(location.search);
+  const books = state.books;
 
   return (
     <div className="my-4">
@@ -19,7 +19,7 @@ export const Books = () => {
           .slice()
           .sort((a, b) => (a[sortBy] > b[sortBy] ? -1 : 1))
           .map((book) => (
-            <BookCard {...book} />
+            <BookCard {...book} key={book.id} />
           ))}
       </div>
     </div>

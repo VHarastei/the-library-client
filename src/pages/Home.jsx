@@ -1,9 +1,10 @@
 import { BookCard } from 'components/BookCard';
-import { books } from 'components/Search';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const Home = () => {
+export const Home = ({ state }) => {
+  const books = state.books;
+
   return (
     <div className="my-4">
       <div className="text-center mt-4">

@@ -5,14 +5,14 @@ import { Create } from 'pages/Create';
 import { Home } from 'pages/Home';
 import { Route, Routes } from 'react-router';
 
-function App() {
+function App(props) {
   return (
-    <Layout>
+    <Layout {...props}>
       <Routes>
-        <Route path="/books/:bookId" element={<Book />} />
-        <Route path="/books" element={<Books />} />
-        <Route path="/create" element={<Create />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/books/:bookId" element={<Book {...props} />} />
+        <Route path="/books" element={<Books {...props} />} />
+        <Route path="/create" element={<Create {...props} />} />
+        <Route path="/" element={<Home {...props} />} />
       </Routes>
     </Layout>
   );
